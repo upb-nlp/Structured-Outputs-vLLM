@@ -45,12 +45,8 @@ contexts = [
 
 messages_list = [
     [
-        {
-            'role': 'system', 'content': 'You are a helpful assistant.'
-        },
-        {
-            'role': 'user', 'content': f"{prompt}\n\nReview: {context}",
-        }
+        {'role': 'system', 'content': 'You are a helpful assistant.'},
+        {'role': 'user', 'content': f"{prompt}\n\nReview: {context}"}
     ] for context in contexts
 ]
 
