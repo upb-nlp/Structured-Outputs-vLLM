@@ -54,13 +54,11 @@ responses = []
 batch_size = 64
 for i in tqdm(range(0, len(messages_list), batch_size)):
     end_interval = min(i+batch_size, len(messages_list))
-
     texts = messages_list[i:end_interval]
 
     completion = llm.chat(texts, sampling_params, use_tqdm=False)
 
     res = [json.loads(comp.outputs[0].text) for comp in completion]
-
     responses += res
 
 print(responses[0])
